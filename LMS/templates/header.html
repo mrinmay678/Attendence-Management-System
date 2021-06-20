@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+<div class="header">
+    <div class="header1">
+        <div class="subhead1">
+            JIS College of Engineering
+        </div>
+        <div class="subhead2">
+            {% now "D d M Y" %}
+        </div>
+    </div>
+    <div class="header2">
+        <div class="subimg1">
+            <img src="{% static 'logo/jisce.png' %}" alt="JIS College of Engineering" width=300 height=50>
+        </div>
+        <div class="subimg2">
+            <img src="{% static 'logo/jisgr.png' %}" alt="JIS Group" width=75 height=50>
+        </div>
+    </div>
+    {% comment %} {% include 'navbar.html' %} {% endcomment %}
+</div>
