@@ -1,0 +1,23 @@
+.header1{
+    background-color:dodgerblue;
+    display:flex;
+    justify-content:space-between;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.subhead1{
+    color: #fff;
+}
+.subhead2{
+    color: #fff;
+    
+}
+.header2{
+    background-color:#fff;
+    display:flex;
+    padding: 5px;
+    justify-content:space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
