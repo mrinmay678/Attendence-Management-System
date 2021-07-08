@@ -20,7 +20,6 @@ INSTALLED_APPS = [
     'authentication',
     'teacher',
     'student',
-    'mar',
     'class',
 ]
 
@@ -39,7 +38,7 @@ ROOT_URLCONF = 'LMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,8 +90,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    "static",
-]
+# STATICFILES_DIRS = [
+#     "static",
+# ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

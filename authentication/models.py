@@ -6,7 +6,7 @@ from django.utils import timezone
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, jis_id, password, **extra_fields):
-        if not email:
+        if not jis_id:
             raise ValueError('Provide Your ID')
         user = self.model(jis_id=jis_id, **extra_fields)
         user.set_password(password)
@@ -19,9 +19,9 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault('is_active', True)
 
         if extra_fields.get('is_staff') is not True:
-            raise ValueError(_('Superuser must have is_staff=True.'))
+            raise ValueError('Superuser must have is_staff=True.')
         if extra_fields.get('is_superuser') is not True:
-            raise ValueError(_('Superuser must have is_superuser=True.'))
+            raise ValueError('Superuser must have is_superuser=True.')
         return self.create_user(jis_id, password, **extra_fields)
 
 
@@ -29,8 +29,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     jis_id = models.CharField(max_length=20, unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    date_joined = models.DateTimeField(default=timezone.now)
-
+    
     USERNAME_FIELD = 'jis_id'
     REQUIRED_FIELDS = []
 
